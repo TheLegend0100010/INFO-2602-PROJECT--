@@ -1,7 +1,7 @@
 from App.database import db
 from .routine import Routine
 
-class Workout(db.model):
+class Workout(db.Model):
     id = db.Column(db.Integer, autoincrement = True, primary_key = True)
     db.relationship('Routine', backref = "workout", lazy = True)
 
