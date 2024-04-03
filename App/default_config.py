@@ -1,2 +1,2 @@
-SQLALCHEMY_DATABASE_URI = "postgres://info_2602_project_db_user:5PPCKgF118KwYSME8QkQpnogBY3sDB4e@dpg-co5g4iuv3ddc7390l8hg-a/info_2602_project_db"
+SQLALCHEMY_DATABASE_URI = "postgresql://info_2602_project_db_zgvv_user:mYnuGAQDMxWtRcq6xYLeH4MGcLrGlbZN@dpg-co5m9bu3e1ms73b8gd4g-a.oregon-postgres.render.com/info_2602_project_db_zgvv"
 SECRET_KEY = "secret key"
