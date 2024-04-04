@@ -4,7 +4,8 @@ from flask_jwt_extended import jwt_required, current_user, unset_jwt_cookies, se
 from.index import index_views
 
 from App.controllers import (
-    login
+    login,
+    create_user
 )
 
 auth_views = Blueprint('auth_views', __name__, template_folder='../templates')
@@ -35,6 +36,24 @@ def login_action():
         flash('Login Successful')
         set_access_cookies(response, token) 
     return response
+
+@auth_views.route('/signup', methods=['POST'])
+def signup_action():
+    data = request.form
+    try:
+        create_user(data['username'], data['password'])
+        token = login(data['username'], data['password'])
+        response = request.referrer
+        if not token:
+            flash('Profile created but login unsuccesseful')
+        else:
+            flash('Profile created and logged in')
+            set_access_token(response, token)
+        return response
+    except IntegrityError as e:
+        db.session.rollback()
+        flash('Username or email already exists please provide a new one')
+    return render_template('signup.html')
 
 @auth_views.route('/logout', methods=['GET'])
 def logout_action():
