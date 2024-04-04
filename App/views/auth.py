@@ -44,7 +44,7 @@ def signup_action():
     try:
         create_user(data['username'], data['password'])
         token = login(data['username'], data['password'])
-        response = request.referrer
+        response = redirect('get_user_page')
         if not token:
             flash('Profile created but login unsuccesseful')
         else:
