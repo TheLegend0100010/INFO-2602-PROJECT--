@@ -24,7 +24,7 @@
             <h1>Current Email: {{ current_user.email }}</h1>
             <form action="/update-email" method="post">
                 <div class="input-field">
-                    <input id="new_email" type="email" name="new_email" value="{{ user.email }}" placeholder="New Email" required>
+                    <input id="new_email" type="email" name="new_email" value="{{ current_user.email }}" placeholder="New Email" required>
                 </div>
                 <button class="btn waves-effect waves-light" type="submit">Update Email</button>
             </form>
