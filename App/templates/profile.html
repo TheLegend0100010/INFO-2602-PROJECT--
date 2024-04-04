@@ -7,7 +7,7 @@
 <div class="row">
     <div class="col s12 m6">
         <div class="card-panel">
-            <h1>Current Username: {{ user.username }}</h1>
+            <h1>Current Username: {{ current_user.username }}</h1>
             <form action="/update-username" method="post">
                 <div class="input-field">
                     <input id="new_username" type="text" name="new_username" placeholder="New Username" required>
@@ -21,7 +21,7 @@
 <div class="row">
     <div class="col s12 m6">
         <div class="card-panel">
-            <h1>Current Email: {{ user.email }}</h1>
+            <h1>Current Email: {{ current_user.email }}</h1>
             <form action="/update-email" method="post">
                 <div class="input-field">
                     <input id="new_email" type="email" name="new_email" value="{{ user.email }}" placeholder="New Email" required>
