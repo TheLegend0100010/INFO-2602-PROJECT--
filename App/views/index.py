@@ -16,6 +16,10 @@ def login_page():
 def signup_page():
     return render_template('signup.html')
 
+@index_views.route('/profilepage', methods=['GET'])
+def profile_page():
+    return render_template('profile.html')
+
 @index_views.route('/init', methods=['GET'])
 def init():
     db.drop_all()
