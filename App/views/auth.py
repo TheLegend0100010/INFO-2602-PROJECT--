@@ -1,7 +1,8 @@
 from flask import Blueprint, render_template, jsonify, request, flash, send_from_directory, flash, redirect, url_for
 from flask_jwt_extended import jwt_required, current_user, unset_jwt_cookies, set_access_cookies
-
-from.index import index_views
+from App.database import db
+from .index import index_views
+from sqlalchemy.exc import IntegrityError
 
 from App.controllers import (
     login,
@@ -48,7 +49,7 @@ def signup_action():
             flash('Profile created but login unsuccesseful')
         else:
             flash('Profile created and logged in')
-            set_access_token(response, token)
+            set_access_cookies(response, token)
         return response
     except IntegrityError as e:
         db.session.rollback()
