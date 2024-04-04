@@ -7,6 +7,22 @@
 <div class="row">
     <div class="col s12 m6">
         <div class="card-panel">
+            <h4>Current Username: {{ current_user.username }}</h4>
+            <h4>Current Email: {{current_user.email}}</h4>
+            <form action="/update-username" method="post">
+                <div class="input-field">
+                    <input id="new_username" type="text" name="new_username" placeholder="New Username" required>
+                </div>
+                <button class="btn waves-effect waves-light" type="submit">Update Username</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col s12 m6">
+        <div class="card-panel">
             <h1>Current Username: {{ current_user.username }}</h1>
             <form action="/update-username" method="post">
                 <div class="input-field">

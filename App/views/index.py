@@ -1,4 +1,5 @@
 from flask import Blueprint, redirect, render_template, request, send_from_directory, jsonify
+from flask_jwt_extended import jwt_required
 from App.models import db
 from App.controllers import create_user, create_routine, create_workout
 
@@ -17,6 +18,7 @@ def signup_page():
     return render_template('signup.html')
 
 @index_views.route('/profilepage', methods=['GET'])
+@jwt_required()
 def profile_page():
     return render_template('profile.html')
 
