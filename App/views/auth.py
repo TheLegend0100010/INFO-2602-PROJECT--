@@ -30,7 +30,7 @@ def identify_page():
 def login_action():
     data = request.form
     token = login(data['username'], data['password'])
-    response = redirect(request.referrer)
+    response = redirect(url_for('profile_page'))
     if not token:
         flash('Bad username or password given'), 401
     else:
