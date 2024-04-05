@@ -9,11 +9,11 @@
         <h4>User Information</h4>
         <form action="/update-profile" method="post">
             <div class="input-field">
-                <input id="username" type="text" name="username" value="{{ user.username }}" placeholder="{{ user.username }}" required>
+                <input id="username" type="text" name="username" value="{{ current_user.username }}" placeholder="{{ current_user.username }}" required>
                 <label for="username">Username</label>
             </div>
             <div class="input-field">
-                <input id="email" type="email" name="email" value="{{ user.email }}" placeholder="{{ user.email }}" required>
+                <input id="email" type="email" name="email" value="{{ current_user.email }}" placeholder="{{ current_user.email }}" required>
                 <label for="email">Email</label>
             </div>
             <div class="input-field">
