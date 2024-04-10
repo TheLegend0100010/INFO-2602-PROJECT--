@@ -38,7 +38,7 @@ def create_app(overrides={}):
     @jwt.expired_token_loader
     def expired_token_callback(jwt_header, jwt_payload):
      flash("Your session has expired. Please log in again.")
-     return redirect(url_for('login'))
+     return redirect(url_for('login_page'))
     
     app.app_context().push()
     return app
