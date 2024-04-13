@@ -31,7 +31,7 @@ def init():
     create_user('rick', 'rickpass')
     with open('exercises.json', encoding = "ISO-8859-1") as file:
         exercises = json.load(file)
-        return jsonify(lenght=len(exercises['exercises'])
+        return jsonify(lenght=len(exercises['exercises']))
         for exercise in exercises['exercises']:
             image = exercise['name'].replace(' ', '_')
             imagelink = f"https://raw.githubusercontent.com/wrkout/exercises.json/master/exercises/{image}/images/0.jpg"
