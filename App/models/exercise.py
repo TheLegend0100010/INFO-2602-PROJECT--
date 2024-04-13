@@ -8,11 +8,11 @@ class Exercise(db.Model):
     instructions = db.Column(db.String(5000), nullable = True)
     image = db.Column(db.String(160), nullable = False)
 
-    def __init__(self, name, level, muscle, image):
+    def __init__(self, name, level, muscle, instructions, image):
         self.name = name
         self.level = level
         self.muscle = muscle
-        # self.instructions = instructions
+        self.instructions = instructions
         self.image = image
 
     def to_json(self):
