@@ -34,10 +34,10 @@ def init():
         for exercise in exercises['exercises']:
             image = exercise['name'].replace(' ', '_')
             imagelink = f"https://raw.githubusercontent.com/wrkout/exercises.json/master/exercises/{image}/images/0.jpg"
-            instructions = ""
-            for instruct in exercise['instructions']:
-                instructions += instruct
-            create_exercise(exercise['name'], exercise['level'], exercise['primaryMuscles'][0], instructions, imagelink)
+            # instructions = ""
+            # for instruct in exercise['instructions']:
+            #     instructions += instruct
+            create_exercise(exercise['name'], exercise['level'], exercise['primaryMuscles'][0], imagelink)
     create_routine()
     create_workout()
     return jsonify(message='db initialized!')

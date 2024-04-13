@@ -8,7 +8,7 @@ class Exercise(db.Model):
     instructions = db.Column(db.String(5000), nullable = False)
     image = db.Column(db.String(160), nullable = False)
 
-    def __init__(self, name, level, muscle, instructions, image):
+    def __init__(self, name, level, muscle, image):
         self.name = name
         self.level = level
         self.muscle = muscle
