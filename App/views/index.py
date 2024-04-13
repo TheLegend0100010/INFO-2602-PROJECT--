@@ -37,7 +37,7 @@ def init():
             instructions = ""
             for instruct in exercise['instructions']:
                 instructions += instruct
-            create_exercise(exercise['name'], exercise['level'], exercise['muscle'], instructions, imagelink)
+            create_exercise(exercise['name'], exercise['level'], exercise['primaryMuscles'][0], instructions, imagelink)
     create_routine()
     create_workout()
     return jsonify(message='db initialized!')
