@@ -5,7 +5,7 @@ class Exercise(db.Model):
     name = db.Column(db.String(120), nullable = False)
     level = db.Column(db.String(20), nullable = False)
     muscle = db.Column(db.String(20), nullable = False)
-    instructions = db.Column(db.String(5000), nullable = True)
+    instructions = db.Column(db.String(2000), nullable = True)
     image = db.Column(db.String(160), nullable = False)
 
     def __init__(self, name, level, muscle, instructions, image):
