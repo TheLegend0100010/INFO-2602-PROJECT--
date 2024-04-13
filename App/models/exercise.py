@@ -12,7 +12,7 @@ class Exercise(db.Model):
         self.name = name
         self.level = level
         self.muscle = muscle
-        self.instructions = instructions
+        # self.instructions = instructions
         self.image = image
 
     def to_json(self):
