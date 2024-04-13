@@ -40,7 +40,7 @@ def init():
             # instructions = ""
             # for instruct in exercise['instructions']:
             #     instructions += instruct
-            record = Exercise(exercises['name'], exercises['level'], exercises['primaryMuscles'][0], imagelink)
+            record = Exercise(exercise['name'], exercise['level'], exercise['primaryMuscles'][0], imagelink)
             records.append(record)
             # records.append({'name': exercise['name'],
             # 'level': exercise['level'],
