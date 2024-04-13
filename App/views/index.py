@@ -36,19 +36,15 @@ def init():
         # return jsonify(lenght=len(exercises['exercises']))
         for exercise in exercises['exercises']:
             image = exercise['name'].replace(' ', '_')
+            image = image.replace('/', '_')
             imagelink = f"https://raw.githubusercontent.com/wrkout/exercises.json/master/exercises/{image}/images/0.jpg"
             instructions = ""
             for instruct in exercise['instructions']:
                 instructions += instruct
             record = Exercise(exercise['name'], exercise['level'], exercise['primaryMuscles'][0], instructions, imagelink)
             records.append(record)
-            # records.append({'name': exercise['name'],
-            # 'level': exercise['level'],
-            # 'muscle': exercise['primaryMuscles'][0],
-            # 'image': imagelink})
         db.session.bulk_save_objects(records)
         db.session.commit()
-            # create_exercise(exercise['name'], exercise['level'], exercise['primaryMuscles'][0], imagelink)
     create_routine()
     create_workout()
     return jsonify(message='db initialized!')
