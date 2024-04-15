@@ -36,7 +36,7 @@ def init():
     db.create_all()
     create_user('bob', 'bobpass')
     create_user('rick', 'rickpass')
-    with open('exercises.json', encoding = "ISO-8859-1") as file:
+    with open('exercises.json', encoding = "utf-8") as file:
         exercises = json.load(file)
         records =[]
         # return jsonify(lenght=len(exercises['exercises']))
