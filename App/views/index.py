@@ -24,6 +24,12 @@ def signup_page():
 def profile_page():
     return render_template('profile.html')
 
+@index_views.route('/exercise/<int:id>', methods=['GET'])
+def exercise(id):
+    exercise = Exercise.query.filter_by(id=id).first()
+    return render_template('exercise.html', exercise=exercise)
+
+
 @index_views.route('/init', methods=['GET'])
 def init():
     db.drop_all()
