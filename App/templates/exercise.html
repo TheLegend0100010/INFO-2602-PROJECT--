@@ -23,8 +23,8 @@
       </div> -->
       <img class="responsive-img" src="{{exercise.image}}">
       <h1 class = "center-align">{{exercise.name}}</h1>
-      <h5 class = "left-align">Level: {{exercise.level || capitalize}}</h5>
-      <h5 class = "left-align">Muscle: {{exercise.muscle}} || capitalize</h5>
+      <h5 class = "left-align">Level: {{exercise.level | capitalize}}</h5>
+      <h5 class = "left-align">Muscle: {{exercise.muscle}} | capitalize</h5>
       <p class = "left-align">Instructions: {{exercise.instructions}}</p>
     </div>
   </div>
