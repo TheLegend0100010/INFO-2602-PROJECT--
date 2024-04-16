@@ -26,6 +26,10 @@
       <h5 class = "left-align">Level: {{exercise.level | capitalize}}</h5>
       <h5 class = "left-align">Muscle: {{exercise.muscle | capitalize}}</h5>
       <p class = "left-align flow-text">Instructions: {{exercise.instructions}}</p>
+      <div class = "row">
+        <a class = "col s6 left-align" href="#">Next Exercise</a>
+        <a class = "col s6 right-align" href="#">Previous Exercise</a>
+      </div>
     </div>
   </div>
 {%endblock%}
