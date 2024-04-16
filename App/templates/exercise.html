@@ -22,9 +22,15 @@
         </div>
       </div> -->
       <img class="responsive-img" src="{{exercise.image}}">
+     
       <h1 class = "center-align">{{exercise.name}}</h1>
-      <h5 class = "left-align">Level: {{exercise.level | capitalize}}</h5>
-      <h5 class = "left-align">Muscle: {{exercise.muscle | capitalize}}</h5>
+    <div class ="collection">
+      <div class = "collection-item"><h5 class = "left-align">Level: {{exercise.level | capitalize}}</h5></div>
+      
+    
+      <div class = "colletion-item" ><h5 class = "left-align">Muscle: {{exercise.muscle | capitalize}}</h5>
+        </div>
+      </div>
       <p class = "left-align flow-text">Instructions: {{exercise.instructions}}</p>
       <div class = "row">
         <a class = "col s6 left-align" href="#">Next Exercise</a>
